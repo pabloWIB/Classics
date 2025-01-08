@@ -1,0 +1,988 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// COLORES
+
+$negro: #000000;
+$azulClaro: #398b7e;
+$azulOscuro: #006151;
+$casiBlanco: #e1e1e1;
+$gris: #2c2c2c;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0a322b;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+// MENEJADOR DE MENU OVERLAY ----------------------
+
+// MENEJADOR DE MENU INTCONTENT
+
+.content{
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    place-content: center;
+    align-items: center;
+    .intContent{
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        height: 97%;
+        width: 98.5%;
+    }
+}
+
+// MENEJADOR DE MENU INTCONTENT ----------------------
+
+// MENEJADOR DE HEADER
+
+.content{
+    .intContent{
+        >:nth-child(1){
+            margin: 0 auto;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            background-color: rgb($casiBlanco, 1);
+            border-radius: 30px;
+            width: 100%;
+            max-width: 3000px;
+            .headerContent{
+                margin: 0 auto;
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                justify-content: space-between;
+                border-radius: 30px;
+                width: 100%;
+                padding: 0.5rem;
+                font-size: 1rem;
+                >div{
+                    display: flex;
+                    flex-flow: row wrap;
+                    align-items: center;
+                    border-radius: 30px;
+                    gap: .35rem;
+                    >div{
+                        height: 100%;
+                        cursor: pointer;
+                        padding: 8px 22.5px;
+                        border: 2px solid $negro;
+                        border-radius: 30px;
+                        color: $casiBlanco;
+                        text-align: center;
+                    }
+                }
+                >:nth-child(1){
+                    >:nth-child(1){
+                        background-color: $negro;
+                        border-color: $negro;
+                        color: $casiBlanco;
+                    }
+                    >:nth-child(2), >:nth-child(3), >:nth-child(4){
+                        background-color: $casiBlanco;
+                        border-color: $casiBlanco;
+                        color: $negro;
+                        border: 2px solid $negro;
+
+                    }
+                }
+                >:nth-child(2){
+                    >:nth-child(1), >:nth-child(2){
+                        background-color: $casiBlanco;
+                        border-color: $casiBlanco;
+                        color: $negro;
+                        border: 2px solid $negro;
+
+                    }
+                    >:nth-child(3){
+                        background-color: $negro;
+                        border-color: $negro;
+                        color: $casiBlanco;
+                    }
+                }
+            }
+        }
+        // .navBarAnimation{
+        //     transform: translateY(0px);
+        //     opacity: 100%;
+        //     transition: 1s;
+        // }
+    }
+}
+
+@media (max-width: 800px){
+    .content{
+        .intContent{
+            >:nth-child(1){
+                .headerContent{
+                    justify-content: space-between;
+                    >div{
+                        >div{
+                            padding: 8px 22.5px;
+                            font-size: 14px;
+                        }
+                    }
+                    >:nth-child(1){
+                        >:nth-child(2), >:nth-child(3){
+                            display: none;
+                        }
+                    }
+                    >:nth-child(2){
+                        >:nth-child(1), >:nth-child(2){
+                            padding: 3px;
+                            div{
+                                max-width: 15px;
+                                padding: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px){
+    .content{
+        .intContent{
+            >:nth-child(1){
+                .headerContent{
+                    justify-content: space-between;
+                    >div{
+                        width: 100%;
+                        display: flex;
+                        flex-flow: row nowrap;
+                        align-items: center;
+                        justify-content: center;
+                        >div{
+                            width: 500%;
+                            padding: 8px;
+                            // font-size: 14px;
+                        }
+                    }
+                    >:nth-child(2){
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// MENEJADOR DE HEADER ----------------------
+
+// MANEJADOR DE MAIN
+
+.content{
+    .intContent{
+        main{
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
+            width: 100%;
+        }
+    }
+}
+
+// MANEJADOR DE MAIN ----------------------
+
+// MANEJADOR DE SECTION
+
+.content{
+    .intContent{
+        main{
+            section{
+                border-radius: 25px;
+                max-width: 3000px;
+                backdrop-filter: blur(7px);
+                cursor: pointer;
+                position: relative;
+                background-image: linear-gradient(to right, rgba(#0a322b, 1), rgba(203, 203, 203, .5));
+                z-index: 1;
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                width: 100%;
+                >:nth-child(1){
+                    margin: 0 auto;
+                    width: 95%;
+                    display: flex;
+                    flex-flow: row wrap;
+                    align-items: center;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 0px;
+                    >:nth-child(1){
+                        display: flex;
+                        flex-flow: row wrap;
+                        align-items: center;
+                        gap: 1.5rem;
+                        >:nth-child(1){
+                            display: flex;
+                            flex-flow: row wrap;
+                            .circle {
+                                width: 35px;
+                                height: 35px;
+                                border-radius: 50%;
+                                position: relative;
+                                overflow: hidden;
+                            }
+                            .circle::before {
+                                content: "";
+                                position: absolute;
+                                top: -1px;
+                                right: -1px;
+                                bottom: -1px;
+                                width: 50%;
+                                border: 5px solid rgba(255, 255, 255, 0.1);
+                                background: rgb(255, 255, 255, .8);
+                                filter: blur(7px);
+                                z-index: -1;
+                            }
+                            .cr2{
+                                margin-left: -20px;
+                            }
+                        }
+                        >:nth-child(2){
+                            display: flex;
+                            height: auto;
+                            h2{
+                                all: unset;
+                                letter-spacing: .75rem;
+                                font-weight: 500;
+                                font-size: 1.95rem;
+                                color: white;
+                            }
+                            h2::selection{
+                                background: none;
+                            }
+                        }
+                    }
+                    >:nth-child(2){
+                        >:nth-child(1){
+                            width: 100%;
+                            max-width: 17.5px;
+                            background: white;
+                            border-radius: 50%;
+                            padding: 2.5px;
+                            display: grid;
+                            place-content: center;
+                            cursor: pointer;
+                            img{
+                                width: 100%;
+                            }
+                        }
+
+                    }
+                }
+            }
+            section::before{
+                position: absolute;
+                content: "";
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-image: linear-gradient(to right, rgba(#0a322b, .8), rgba(203, 203, 203, .8));
+                border-radius: 20px;
+                backdrop-filter: blur(7px);
+                z-index: -1;
+                transition: opacity 0.5s linear;
+                opacity: 0;
+            }
+            section:hover::before{
+                opacity: .8;
+            }
+        }
+    }
+}
+
+@media(max-width: 800px){
+    .content{
+        .intContent{
+            main{
+                section{
+                    >:nth-child(1){
+                        >:nth-child(1){
+                            >:nth-child(2){
+                                h2{
+                                    letter-spacing: 0.55rem;
+                                    font-size: 1.45rem;
+                                }
+                            }
+                        }
+                        >:nth-child(2){
+                            >:nth-child(1){
+                                max-width: 17.5px;
+                                padding: 2.5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 500px){
+    .content{
+        .intContent{
+            main{
+                section{
+                    >:nth-child(1){
+                        display: flex;
+                        flex-flow: row nowrap;
+                        >:nth-child(1){
+                            >:nth-child(2){
+                                width: 50%;
+                                h2{
+                                    letter-spacing: 0.45rem;
+                                    font-size: 1.25rem;
+                                }
+                            }
+                        }
+                        >:nth-child(2){
+                            >:nth-child(1){
+                                max-width: 17.5px;
+                                padding: 2.5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// MANEJADOR DE SECTION ----------------------
+
+// MANEJADOR DE NAV 
+
+.content{
+    .intContent{
+        main{
+            nav{
+                display: flex;
+                flex-flow: row nowrap;
+                width: 100%;
+                gap: .5rem;
+                max-width: 3000px;
+                >:nth-child(1){
+                    width: 50%;
+                    background: rgba(rgb(243, 243, 243), .85);
+                    backdrop-filter: blur(7px);
+                    border-radius: 30px;
+                    display: flex;
+                    align-items: center;
+                    place-content: center;
+                    height: auto;
+                    padding: 20px 0px;
+                    &:hover{
+                        backdrop-filter: blur(9px);
+                    }
+                    >div{
+                        height: 100%;
+                        width: 90%;
+                        .cajaNum1{
+                            display: flex;
+                            flex-flow: column nowrap;
+                            gap: 2rem;
+                            height: 100%;
+                            justify-content: space-between;
+                            .textArea{
+                                display: flex;
+                                flex-flow: column wrap;
+                                justify-content: space-between;
+                                gap: 1rem;
+                                span{
+                                    text-decoration: underline;
+                                }
+                                h2{
+                                    all: unset;
+                                    color: $azulOscuro;
+                                    font-weight: 800;
+                                    font-size: 2rem;
+                                    cursor: default;
+                                }
+                                h2::selection{
+                                    background: none;
+                                }
+                            }
+                            .contentLine{
+                                display: flex;
+                                flex-flow: column wrap;
+                                gap: 1.5rem;
+                                p{
+                                    all: unset;
+                                    color: $azulOscuro;
+                                    font-weight: 400;
+                                    font-size: .9rem;
+                                    span{
+                                        text-decoration: underline;
+                                        font-weight: 900;
+                                    }
+                                }
+                                .line{
+                                    width: 100%;
+                                    height: 2px;
+                                    border-radius: 20px;
+                                    background: linear-gradient(to right, rgba(7, 35, 80, 1), rgba(203, 203, 203, .2));
+                                    backdrop-filter: blur(7px);
+                                    position: relative;
+                                }
+                            }
+                            .textArea2{
+                                display: flex;
+                                flex-flow: row wrap;
+                                align-items: center;
+                                justify-content: space-between;
+                                >:nth-child(1){
+                                    span{
+                                        color: $azulOscuro;
+                                        font-weight: 800;
+                                        font-size: .8rem;
+                                        cursor: pointer;
+                                        &:hover{
+                                            text-decoration: 2px solid underline;
+                                            text-underline-offset: .15rem;
+                                        }
+                                    }
+                                }
+                                >:nth-child(2){
+                                    display: grid;
+                                    place-content: center;
+                                    background: $azulOscuro;
+                                    border-radius: 50%;
+                                    padding: 4px;
+                                    >div{
+                                        width: 100%;
+                                        max-width: 16.5px;
+                                        border-radius: 50%;
+                                        display: grid;
+                                        place-content: center;
+                                        cursor: pointer;
+                                        img{
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                            .pene{
+                                >:nth-child(1){
+                                    span{
+                                        text-decoration: 2px solid underline;
+                                        text-underline-offset: .15rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                >:nth-child(2){
+                    width: 50%;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    gap: .5rem;
+                    >div{
+                        width: 50%;
+                        border-radius: 30px;
+                        display: flex;
+                        align-items: center;
+                        place-content: center;
+                        height: auto;
+                        padding: 20px 0px;
+                        >div{
+                            height: 100%;
+                            width: 85%;
+                            .cajaNum2, .cajaNum3{
+                                display: flex;
+                                flex-flow: column nowrap;
+                                justify-content: space-between;
+                                height: 100%;
+                                gap: .5rem;
+                                h2, h3, p{
+                                    all: unset;
+                                    color: white;
+                                }
+                                h2, h3{
+                                    cursor: default;
+                                }
+                                h3::selection{
+                                    background-color: none;
+                                }
+                                >:nth-child(1){
+                                    height: 50%;
+                                    width: 100%;
+                                    display: flex;
+                                    flex-flow: column wrap;
+                                }
+                                >:nth-child(2){
+                                    width: 100%;
+                                    height: 50%;
+                                    display: flex;
+                                    flex-flow: column wrap;
+                                    justify-content: space-between;
+                                    h3{
+                                        font-size: 1.2rem;
+                                    }
+                                    p{
+                                        font-size: .9rem;
+                                        font-weight: 400;
+                                        span{
+                                            text-decoration: underline;
+                                            font-weight: 500;
+                                        }
+
+                                    }
+                                }
+                            }
+                            .cajaNum2{
+                                >:nth-child(1){
+                                    >:nth-child(1){
+                                        font-size: 3rem;
+                                        font-weight: 500;
+                                    }
+                                }
+                                h2::selection{
+                                    background: none;
+                                }
+                            }
+                            .cajaNum3{
+                                >:nth-child(1){
+                                    display: flex;
+                                    flex-flow: column wrap;
+                                    justify-content: space-between;
+                                    >:nth-child(1){
+                                        display: flex;
+                                        flex-flow: row wrap;
+                                        justify-content: space-between;
+                                        width: 100%;
+                                        >:nth-child(1){
+                                            >div{
+                                                height: 15px;
+                                                width: 15px;
+                                                border-radius: 50%;
+                                                border: 1.5px solid white;
+                                            }
+                                        }
+                                        >:nth-child(2){
+                                            display: grid;
+                                            place-content: center;
+                                            border-radius: 50%;
+                                            >div{
+                                                width: 100%;
+                                                max-width: 45px;
+                                                border-radius: 50%;
+                                                display: grid;
+                                                place-content: center;
+                                                cursor: pointer;
+                                                img{
+                                                    width: 100%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    >:nth-child(2){
+                                        font-size: .9rem;
+                                        // transform: translateY(-10px);
+                                    }
+                                }
+                                >:nth-child(2){
+                                    p{
+                                        font-weight: 400;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    >:nth-child(1){
+                        background: rgb(#739c95, 1);
+                        backdrop-filter: blur(.75px);
+                    }
+                    >:nth-child(2){
+                        background: rgb(#24665b, 1);
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 800px){
+    .content{
+        .intContent{
+            main{
+                nav{
+                    flex-flow: column nowrap;
+                    >:nth-child(1){
+                        width: 100%;
+                        >div{
+                            .cajaNum1{
+                                gap: 1rem;
+                                .textArea{
+                                    gap: .75rem;
+                                    h2{
+                                        font-size: 1.5rem;
+                                    }
+                                }
+                                .contentLine{
+                                    gap: 1rem;
+                                    p{
+                                        font-size: .8rem;
+                                    }
+                                }
+                                .textArea2{
+                                    >:nth-child(1){
+                                        span{
+                                            font-size: .75rem;
+                                        }
+                                    }
+                                    >:nth-child(2){
+                                        >div{
+                                            width: 100%;
+                                            max-width: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    >:nth-child(2){
+                        width: 100%;
+                        gap: .5rem;
+                        >div{
+                            >div{
+                                .cajaNum2, .cajaNum3{
+                                    gap: 0rem;
+                                    >:nth-child(2){
+                                        h3{
+                                            font-size: 1rem;
+                                        }
+                                        p{
+                                            font-size: .8rem;
+                                        }
+                                    }
+                                }
+                                .cajaNum2{
+                                    >:nth-child(1){
+                                        height: 25%;
+                                        >:nth-child(1){
+                                            font-size: 1.5rem;
+                                            font-weight: 500;
+                                        }
+                                    }
+                                    >:nth-child(2){
+                                        height: 75%;
+                                    }
+                                }
+                                .cajaNum3{
+                                    >:nth-child(1){
+                                        height: 25%;
+                                        >:nth-child(1){
+                                            >:nth-child(1){
+                                                >div{
+                                                    height: 12.5px;
+                                                    width: 12.5px;
+                                                }
+                                                
+                                            }
+                                            >:nth-child(2){
+                                                >div{
+                                                    max-width: 35px;
+                                                }
+                                            }
+                                        }
+                                        >:nth-child(2){
+                                            display: none;
+                                        }
+                                    }
+                                    >:nth-child(2){
+                                        height: 75%;
+                                        p{
+                                            font-size: .8rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// MANEJADOR DE BODY 
+
+@media(max-width: 500px){
+    body{
+        overflow: auto;
+        .content{
+            position: absolute;
+            z-index: 10;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            place-content: center;
+            align-items: center;
+            margin: 0 auto;
+            .intContent{
+                margin: 0 auto;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-between;
+                gap: 2rem;
+                height: 97%;
+                width: 95%;
+            }
+        }
+    }
+    
+}
+
+// MANEJADOR DE BODY ----------------------
+
+@media(max-width: 500px){
+    .content{
+        .intContent{
+            main{
+                nav{
+                    flex-flow: column nowrap;
+                    >:nth-child(1){
+                        width: 100%;
+                        >div{
+                            .cajaNum1{
+                                gap: 1rem;
+                                .textArea{
+                                    gap: .75rem;
+                                    h2{
+                                        font-size: 1.65rem;
+                                    }
+                                }
+                                .contentLine{
+                                    gap: 1rem;
+                                    p{
+                                        font-size: .8rem;
+                                    }
+                                }
+                                .textArea2{
+                                    >:nth-child(1){
+                                        span{
+                                            font-size: .75rem;
+                                        }
+                                    }
+                                    >:nth-child(2){
+                                        >div{
+                                            width: 100%;
+                                            max-width: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    >:nth-child(2){
+                        width: 100%;
+                        flex-flow: column nowrap;
+                        >div{
+                            width: 100%;
+                            >div{
+                                width: 90%;
+                                .cajaNum2, .cajaNum3{
+                                    display: flex;
+                                    flex-flow: column nowrap;
+                                    justify-content: space-between;
+                                    height: 100%;
+                                    gap: .5rem;
+                                    h2, h3, p{
+                                        all: unset;
+                                        color: white;
+                                    }
+                                    
+                                    >:nth-child(1){
+                                        height: auto;
+                                        width: 100%;
+                                        display: flex;
+                                        flex-flow: column wrap;
+                                        
+                                    }
+                                    >:nth-child(2){
+                                        width: 100%;
+                                        height: auto;
+                                        display: flex;
+                                        flex-flow: column wrap;
+                                        justify-content: space-between;
+                                        h3{
+                                            font-size: 1.1rem;
+                                        }
+                                        p{
+                                            font-size: .8rem;
+                                            font-weight: 400;
+                                        }
+                                    }
+                                }
+                                .cajaNum2{
+                                    gap: 2rem;
+                                    >:nth-child(1){
+                                        >:nth-child(1){
+                                            font-size: 3rem;
+                                            font-weight: 500;
+                                        }
+                                    }
+                                    >:nth-child(2){
+                                        gap: 2rem;
+                                    }
+                                }
+                                .cajaNum3{
+                                    >:nth-child(1){
+                                        display: flex;
+                                        flex-flow: column wrap;
+                                        justify-content: space-between;
+                                        gap: 2rem;
+                                        >:nth-child(1){
+                                            display: flex;
+                                            flex-flow: row wrap;
+                                            justify-content: space-between;
+                                            width: 100%;
+                                            >:nth-child(1){
+                                                >div{
+                                                    height: 10px;
+                                                    width: 10px;
+                                                }
+                                            }
+                                            >:nth-child(2){
+                                                >div{
+                                                    max-width: 30px;
+                                                }
+                                            }
+                                        }
+                                        >:nth-child(2){
+                                            display: block;
+                                            font-size: .9rem;
+                                        }
+                                    }
+                                    // >:nth-child(2){
+                                    //     p{
+                                    //     }
+                                    // }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// MANEJADOR DE NAV ----------------------
+
+// MANEJADOR DE CAROUSEL 
+
+.content{
+    .intContent{
+        main{
+            .carousel{
+                overflow: hidden;
+                width: 100%;
+                color: white;
+                background-color: rgb(#fff, .75);
+                border-radius: 25px;
+                padding: 4.5px 0px;
+                p{
+                    all: unset;
+                    font-size: .75rem;
+                    color: #000000;
+                    cursor: default;
+                }
+                p::selection{
+                    background: none;
+                }
+                .carousel-inner {
+                    animation: carousel-scroll 45s linear infinite;
+                    white-space: nowrap;
+                  }
+                  @keyframes carousel-scroll {
+                    0% {
+                      transform: translateX(0);
+                    }
+                    100% {
+                      transform: translateX(-100%);
+                    }
+                  }
+            }
+        }
+    }
+}
+
+// MANEJADOR DE CAROUSEL ----------------------
+
+// MANEJADOR DE FOOTER  
+
+.content{
+    .intContent{
+        main{
+            footer{
+                margin: 0 auto;
+                width: 80%;
+                text-align: center;
+                p{
+                    all: unset;
+                    font-size: .7rem;
+                    letter-spacing: 0.1rem;
+                    font-weight: 500;
+                    cursor: default;
+                    color: white;
+                    >:nth-child(1){
+                        text-decoration: underline;
+                    }
+                    >:nth-child(2){
+                        font-weight: 900;
+                    }
+                }
+                p::selection{
+                    background: none;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:800px){
+    .content{
+        .intContent{
+            main{
+                footer{
+                    width: 85%;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:500px){
+    .content{
+        .intContent{
+            main{
+                footer{
+                    width: 95%;
+                    p{
+                        font-size: .65rem;
+                    }
+                }
+            }
+        }
+    }
+}
