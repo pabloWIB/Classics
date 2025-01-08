@@ -32,7 +32,7 @@ export default function Main() {
               <div className="contentLine">
                 <div>
                   <p>
-                    <span>Chess is more than a game</span> — it's a journey through time and intellect. Whether you're a beginner or a grandmaster, every move matters in the ultimate battle of minds.
+                    <span>Chess is more than a game</span> — it is a journey through time and intellect. Whether you are a beginner or a grandmaster, every move matters in the ultimate battle of minds.
                   </p>
                 </div>
                 <div className="line"></div>
